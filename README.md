@@ -1,4 +1,4 @@
-Para altear o Vue, vá até ui e execute:
+Para altear o React, vá até ui e execute:
 
 ```shell
 npm run install
