@@ -6,8 +6,4 @@
   html {
     font-family: "Montserrat", system-ui, sans-serif;
   }
-
-  .bg-foreground {
-    @apply bg-white/5
-  }
 }
