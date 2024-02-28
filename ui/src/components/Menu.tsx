@@ -5,17 +5,17 @@ export function Menu() {
   return <>
     <nav>
       <ul className="flex flex-col gap-2">
-        <Li to="/">Dashboard</Li>    
+        <LiLink to="/">Dashboard</LiLink>    
 
-        <Li to="/newsletters/search">Newsletters</Li>
+        <LiLink to="/newsletters/search">Newsletters</LiLink>
 
-        <Li to="/login">Login</Li>
+        <LiLink to="/login">Login</LiLink>
       </ul>
     </nav>
   </>
 }
 
-function Li({ children, to }: { to: string, children: React.ReactNode }) {
+function LiLink({ children, to }: { to: string, children: React.ReactNode }) {
   return <li>
     <Link to={to} className="block p-2 hover:bg-main">
       {children}

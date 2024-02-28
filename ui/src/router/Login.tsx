@@ -6,7 +6,7 @@ import { z } from "zod";
 
 const loginSchema = z.object({
   email: z.string().email('Deve ser um email válido'),
-  password: z.string({ required_error: "Informe a senha" }).min(3, 'Informe, pelo menos, 3 caracteres')
+  password: z.string().min(3, 'Informe, pelo menos, 3 caracteres')
 });
 
 type LoginFormType = z.infer<typeof loginSchema>;
@@ -38,7 +38,7 @@ export function LoginPage() {
         { errors.email && <Error>{ errors.email?.message }</Error> }
       </Field>
       
-      <Field className="login__field">
+      <Field>
         <Input type="password" placeholder="Senha" { ... register("password") }/>
 
         { errors.password && <Error>{ errors.password?.message }</Error> }

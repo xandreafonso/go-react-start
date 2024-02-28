@@ -14,6 +14,8 @@ func main() {
 	router := chi.NewRouter()
 	router.Use(middleware.Logger)
 
+	// router.Options("/*")
+
 	router.Handle("/assets/*", http.FileServer(http.Dir("./ui/dist")))
 
 	router.Get("/*", func(w http.ResponseWriter, r *http.Request) {
