@@ -10,7 +10,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 
-	mux.Handle("GET /assets/*", http.FileServer(http.Dir("./ui/dist")))
+	mux.Handle("GET /assets/*", http.FileServer(http.Dir("./frontend/dist")))
 
 	mux.HandleFunc("GET /*", func(w http.ResponseWriter, r *http.Request) {
 		contentType := "text/html"
@@ -24,7 +24,7 @@ func main() {
 		w.Header().Add("Content-Type", contentType)
 		w.WriteHeader(http.StatusOK)
 
-		rawFile, _ := os.ReadFile("./ui/dist/" + file)
+		rawFile, _ := os.ReadFile("./frontend/dist/" + file)
 		w.Write(rawFile)
 	})
 
