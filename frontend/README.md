@@ -1,6 +1,9 @@
 # FRONTEND
 
 ```shell
+pnpm create vite frontend
+cd frontend
+pnpm install
 pnpm install react-router-dom
 # https://tailwindcss.com/docs/installation/using-postcss
 pnpm install -D tailwindcss postcss autoprefixer
